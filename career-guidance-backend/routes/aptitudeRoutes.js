@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const { submitAptitude, getAptitudeResults } = require('../controllers/aptitudeController');
 
-// Add routes here later
-// Example placeholder route:
-router.get('/', (req, res) => res.send('Aptitude API is ready'));
+// Route to submit aptitude test
+router.post('/submit', submitAptitude);
+
+// Route to get a student's aptitude results
+router.get('/results/:studentId', getAptitudeResults);
 
 module.exports = router;
